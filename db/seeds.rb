@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# seeding timeslot table with days from today until 20 days
+
+if Timeslot.all.length == 0
+  date = Time.now
+  Timeslot.create(date:date, half_day: 1)
+  Timeslot.create(date:date, half_day: 2)
+  until Timeslot.last.date.year == 5.years.from_now.year
+    date = date + 1.day
+    Timeslot.create(date: date, half_day: 1)
+    Timeslot.create(date: date, half_day: 2)
+  end
+  puts "added 5 years of dates from today"
+end
