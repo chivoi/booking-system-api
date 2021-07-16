@@ -11,3 +11,10 @@ if Timeslot.all.length == 0
   end
   puts "added 5 years of dates from today"
 end
+
+# seeding users
+if User.all.length == 0
+  User.create(first_name:"Ana", last_name: "Lastoviria", phone_num: "0404040404", email: "ana@test.com", password:"password", password_confirmation:"password")
+  User.create(first_name:"Alex", last_name: "Velasco", phone_num: "123456789", email: "alex@test.com", password:"password1", password_confirmation:"password1", is_admin: "true")
+  puts "Created 1 x user + 1 x admin"
+end
