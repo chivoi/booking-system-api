@@ -1,0 +1,88 @@
+### AUTH TESTS
+
+### Create user
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Ana",
+  "last_name": "Lastoviria",
+  "phone_num": "0404040404",
+  "email": "ana@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+### Create admin
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Alex",
+  "last_name": "Velasco",
+  "phone_num": "0001110303",
+  "email": "alex@test.com",
+  "password": "password1",
+  "password_confirmation": "password1",
+  "is_admin": "true"
+}
+### Unsuccessful user: no first name
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "",
+  "last_name": "Velasco",
+  "phone_num": "000444555666",
+  "email": "alex@test.com",
+  "password": "password1",
+  "password_confirmation": "password1"
+}
+### Unsuccessful user: no last name
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Alex",
+  "last_name": "",
+  "phone_num": "000444555666",
+  "email": "alex@test.com",
+  "password": "password1",
+  "password_confirmation": "password1"
+}
+### Unsuccessful user: non-numerical + short phone number
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Alex",
+  "last_name": "Velasco",
+  "phone_num": "hi",
+  "email": "alex@test.com",
+  "password": "password1",
+  "password_confirmation": "password1"
+}
+### Unsuccessful user: invalid email
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Alex",
+  "last_name": "Velasco",
+  "phone_num": "000444555666",
+  "email": "hello I am invalid",
+  "password": "password1",
+  "password_confirmation": "password1"
+}
+
+### Unsuccessful user: already taken
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "first_name": "Ana",
+  "last_name": "Lastoviria",
+  "phone_num": "0404040404",
+  "email": "ana@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
