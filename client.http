@@ -1,16 +1,18 @@
-### AUTH TESTS
+### ***AUTH TESTS***
+
+### ~SIGN UP~
 
 ### Create user
 POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-  "first_name": "Ana",
-  "last_name": "Lastoviria",
+  "first_name": "Ana1",
+  "last_name": "Lastoviria1",
   "phone_num": "0404040404",
-  "email": "ana@test.com",
-  "password": "password",
-  "password_confirmation": "password"
+  "email": "ana1@test.com",
+  "password": "password1",
+  "password_confirmation": "password1"
 }
 ### Create admin
 POST http://localhost:3000/api/auth/sign_up
@@ -74,15 +76,29 @@ Content-Type: application/json
   "password_confirmation": "password1"
 }
 
-### Unsuccessful user: already taken
-POST http://localhost:3000/api/auth/sign_up
+### ~LOG IN~
+
+### Log in with correct password
+POST http://localhost:3000/api/auth/log_in
 Content-Type: application/json
 
 {
-  "first_name": "Ana",
-  "last_name": "Lastoviria",
-  "phone_num": "0404040404",
-  "email": "ana@test.com",
-  "password": "password",
-  "password_confirmation": "password"
+  "email": "alex@test.com",
+  "password": "password1"
+}
+### Unsuccessful log in with incorrect password
+POST http://localhost:3000/api/auth/log_in
+Content-Type: application/json
+
+{
+  "email": "alex@test.com",
+  "password": "ljdgkldfjlkdfgj"
+}
+### Unsuccessful log in with incorrect email
+POST http://localhost:3000/api/auth/log_in
+Content-Type: application/json
+
+{
+  "email": "allkdjglk@test.com",
+  "password": "password1"
 }
