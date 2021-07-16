@@ -102,3 +102,10 @@ Content-Type: application/json
   "email": "allkdjglk@test.com",
   "password": "password1"
 }
+
+### ~BOOKINGS~
+
+### Get all bookings
+GET http://localhost:3000/api/bookings
+
+### Get current user bookings
