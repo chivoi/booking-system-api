@@ -109,3 +109,38 @@ Content-Type: application/json
 GET http://localhost:3000/api/bookings
 
 ### Get current user bookings
+
+### Create a booking
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+
+{
+  "user_id": "1",
+  "timeslot_id": "101",
+  "venue": "Cool venue",
+  "address": "1 Some Or Other Ave, Flemington",
+  "event_type": "party",
+  "start_time": "12:00pm",
+  "duration": "90",
+  "message": "Hello it's my mate's birthday party play pls"
+}
+
+### Show a single booking
+GET http://localhost:3000/api/bookings/2
+
+### Update a booking
+PATCH http://localhost:3000/api/bookings/3
+Content-Type: application/json
+
+{
+  "user_id": "1",
+  "timeslot_id": "101",
+  "venue": "Cool venue",
+  "address": "1 Some Or Other Ave, Flemington",
+  "event_type": "party",
+  "start_time": "12:00pm",
+  "duration": "90",
+  "message": "This is an updated message"
+}
+### Delete a booking
+DELETE http://localhost:3000/api/bookings/10
