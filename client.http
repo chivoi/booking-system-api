@@ -107,33 +107,42 @@ Content-Type: application/json
 
 ### Get all bookings
 GET http://localhost:3000/api/bookings
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjUzMzIsInN1YiI6Mn0.WqBvVIcVo-q-0ojRBlIDma7XJl6fh1PWjry7wviT_O8
 
 ### Get current user bookings
+GET http://localhost:3000/api/my_bookings
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
+
 
 ### Create a booking
 POST http://localhost:3000/api/bookings
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 {
-  "user_id": "1",
-  "timeslot_id": "101",
-  "venue": "Cool venue",
+  "timeslot_id": "102",
+  "venue": "Madura mansion",
   "address": "1 Some Or Other Ave, Flemington",
   "event_type": "party",
   "start_time": "12:00pm",
   "duration": "90",
-  "message": "Hello it's my mate's birthday party play pls"
+  "message": "This should work with a current user"
 }
 
-### Show a single booking
-GET http://localhost:3000/api/bookings/2
+### Unsuccessfuly show someone else's single booking
+GET http://localhost:3000/api/bookings/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
+
+### Successful show a single booking
+GET http://localhost:3000/api/bookings/13
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 ### Update a booking
-PATCH http://localhost:3000/api/bookings/3
+PATCH http://localhost:3000/api/bookings/13
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 {
-  "user_id": "1",
   "timeslot_id": "101",
   "venue": "Cool venue",
   "address": "1 Some Or Other Ave, Flemington",
@@ -142,5 +151,11 @@ Content-Type: application/json
   "duration": "90",
   "message": "This is an updated message"
 }
+
 ### Delete a booking
-DELETE http://localhost:3000/api/bookings/10
+DELETE http://localhost:3000/api/bookings/13
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
+
+### Unsuccessfuly delete someone else's booking
+DELETE http://localhost:3000/api/bookings/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjU3MzEsInN1YiI6MX0.fDdieTZWFeFi8DkKiTAv1Vsx5pZVRdDhbVsVuh1cU_Y

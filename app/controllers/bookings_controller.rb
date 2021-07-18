@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
+  load_and_authorize_resource
 
+  before_action :authenticate_user
   before_action :set_booking, only: [:show, :update, :destroy]
 
   def user_bookings 
@@ -13,7 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def create 
-    @booking = Booking.create(booking_params)
+    @booking = current_user.bookings.create(booking_params)
     if @booking.errors.any?
       render json: @booking.errors, status: :unprocessable_entity
     else
