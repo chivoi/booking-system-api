@@ -196,3 +196,29 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5M
 ### Get client's contact details
 GET http://localhost:3000/api/clients/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5MDEsInN1YiI6Mn0.qeyKoYhL6cLSgikQFk3rtBmUCaANVMlqwauTn5C2gok
+
+### Change contact details
+
+### Delete account
+
+### ~TIMESLOTS~
+
+### Successfully block timeslot
+PATCH http://localhost:3000/api/edit_availability
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3MDAxMDIsInN1YiI6Mn0.aG3RZB5RfFTTtH0oSR4MFdljD6dVUjpj7YHx5bDHoH4
+
+{
+  "id": "500",
+  "is_blocked": "true" 
+}
+
+### Successfully release timeslot
+PATCH http://localhost:3000/api/edit_availability
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3MDAxMDIsInN1YiI6Mn0.aG3RZB5RfFTTtH0oSR4MFdljD6dVUjpj7YHx5bDHoH4
+
+{
+  "id": "500",
+  "is_blocked": "false" 
+}

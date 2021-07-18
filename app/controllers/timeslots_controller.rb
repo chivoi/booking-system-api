@@ -3,11 +3,15 @@ class TimeslotsController < ApplicationController
   before_action :set_timeslot, only: [:update]
 
   def update
-    @timeslot.update(timeslot_params)
-    if @timeslot.errors.any?
-      render json: @timeslot.errors, status: :unprocessable_entity
-    else 
-      render json: @timeslot, status: 201
+    if current_user.is_admin
+      @timeslot.update(timeslot_params)
+      if @timeslot.errors.any?
+        render json: @timeslot.errors, status: :unprocessable_entity
+      else 
+        render json: @timeslot, status: 201
+      end
+    else
+      render json: {"Error": "You don't have permission to do that"}, status: 401
     end
   end
   

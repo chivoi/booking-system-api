@@ -9,6 +9,5 @@ class Ability
     can :manage, Booking, user_id: user.id
     can :manage, :all if user.is_admin
     cannot :destroy, :all if user.is_admin
-    can :update, Timeslot if user.is_admin
   end
 end
