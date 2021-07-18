@@ -6,6 +6,14 @@ Rails.application.routes.draw do
     get '/bookings/:id', to: 'bookings#show'
     patch '/bookings/:id', to: 'bookings#update'
     delete '/bookings/:id', to: 'bookings#destroy'
+
+    get '/my_details', to: 'clients#my_details'
+    patch '/my_details', to: 'users#update'
+    get '/clients', to: 'clients#index'
+    delete '/my_details', to: 'users#destroy'
+    get 'clients/:id', to: 'clients#show'
+    get 'clients/:id/bookings', to: 'clients#client_bookings'
+
     scope '/auth' do
       post '/sign_up', to: 'users#create'
       post '/log_in', to: 'users#log_in'

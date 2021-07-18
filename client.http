@@ -134,7 +134,7 @@ GET http://localhost:3000/api/bookings/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 ### Successful show a single booking
-GET http://localhost:3000/api/bookings/13
+GET http://localhost:3000/api/bookings/14
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 ### Update a booking
@@ -157,5 +157,42 @@ DELETE http://localhost:3000/api/bookings/13
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjM3NjgsInN1YiI6NH0.7XzhHV9M2Q6nbq24UvKhnWgpuNuU99DM4usYTr6ojVA
 
 ### Unsuccessfuly delete someone else's booking
-DELETE http://localhost:3000/api/bookings/1
+DELETE http://localhost:3000/api/bookings/13
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2NjU3MzEsInN1YiI6MX0.fDdieTZWFeFi8DkKiTAv1Vsx5pZVRdDhbVsVuh1cU_Y
+
+### ~CONTACT DETAILS~
+
+### Get all clients for admin
+GET http://localhost:3000/api/clients
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODQxMjksInN1YiI6Mn0._rVK8uYuFsL9dLBBB145NuxRcISoqoR9q6zYB8KP5Os
+
+### Get contact details for a user
+GET http://localhost:3000/api/my_details
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODM0OTEsInN1YiI6MX0.T0v1aOSX-N5vyBY8SfnglPjaGOqPwGHQNDgQqGio18Y
+
+### User update contact details
+PATCH http://localhost:3000/api/my_details
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODQ4NjgsInN1YiI6MX0.vFk2b-JV5X-tPrPHpv4weqscvtuClOIGlW-MNJ0_ewY
+
+{
+  "first_name": "Ana",
+  "last_name": "Banana",
+  "phone_num": "111111111110000",
+  "email": "ana@test.com"
+}
+
+### Delete account
+DELETE http://localhost:3000/api/my_details
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODU3ODMsInN1YiI6Nn0.LtbAv_YJLKebmYhFoL4XbCuG0Iv8PG3F4JV1LNhm4Iw
+
+
+### ~CLIENTS~
+
+### Get all clients with bookings
+GET http://localhost:3000/api/clients
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5MDEsInN1YiI6Mn0.qeyKoYhL6cLSgikQFk3rtBmUCaANVMlqwauTn5C2gok
+
+### Get client's contact details
+GET http://localhost:3000/api/clients/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5MDEsInN1YiI6Mn0.qeyKoYhL6cLSgikQFk3rtBmUCaANVMlqwauTn5C2gok

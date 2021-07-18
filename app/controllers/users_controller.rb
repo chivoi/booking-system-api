@@ -20,6 +20,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    begin
+      current_user.update(user_params)
+      if current_user.save 
+        render json: {
+          first_name: current_user.first_name, 
+          last_name: current_user.last_name,
+          phone_num: current_user.phone_num,
+          email: current_user.email
+        }
+      else
+        render json: {"error": "Contact details did not update"}, status: :unprocessable_entity
+      end
+    rescue
+      render json: {"error": "You don't have permission to do this"}, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    begin
+      current_user.destroy
+      render json: 204
+    rescue
+      render json: {"error": "You don't have permission to do this"}
+    end
+  end
+
   private
 
   def user_params

@@ -5,16 +5,19 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
 
   def user_bookings 
+    # ok
     @bookings = current_user.bookings
     render json: @bookings
   end
 
   def all_bookings
+    # ok
     @all_bookings = Booking.all
     render json: @all_bookings
   end
 
   def create 
+    # ok
     @booking = current_user.bookings.create(booking_params)
     if @booking.errors.any?
       render json: @booking.errors, status: :unprocessable_entity
@@ -34,6 +37,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    # ok
     render json: @booking
   end
 
