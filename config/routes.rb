@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'clients/:id', to: 'clients#show'
     get 'clients/:id/bookings', to: 'clients#client_bookings'
 
+    patch '/block_timeslot', to: 'timeslots#update'
+
     scope '/auth' do
       post '/sign_up', to: 'users#create'
       post '/log_in', to: 'users#log_in'
