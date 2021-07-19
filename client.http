@@ -182,6 +182,16 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODQ4N
   "email": "ana@test.com"
 }
 
+### User update password
+PATCH http://localhost:3000/api/my_details
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODQ4NjgsInN1YiI6MX0.vFk2b-JV5X-tPrPHpv4weqscvtuClOIGlW-MNJ0_ewY
+
+{
+  "password": "password0",
+  "password_confirmation": "password0"
+}
+
 ### Delete account
 DELETE http://localhost:3000/api/my_details
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODU3ODMsInN1YiI6Nn0.LtbAv_YJLKebmYhFoL4XbCuG0Iv8PG3F4JV1LNhm4Iw
@@ -189,17 +199,13 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODU3O
 
 ### ~CLIENTS~
 
-### Get all clients with bookings
+### Get all clients with bookings - admin
 GET http://localhost:3000/api/clients
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5MDEsInN1YiI6Mn0.qeyKoYhL6cLSgikQFk3rtBmUCaANVMlqwauTn5C2gok
 
-### Get client's contact details
-GET http://localhost:3000/api/clients/1
+### Get client's contact details - admin
+GET http://localhost:3000/api/clients/5
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY2ODY5MDEsInN1YiI6Mn0.qeyKoYhL6cLSgikQFk3rtBmUCaANVMlqwauTn5C2gok
-
-### Change contact details
-
-### Delete account
 
 ### ~TIMESLOTS~
 

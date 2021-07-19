@@ -7,7 +7,6 @@ class ClientsController < ApplicationController
   end
 
   def show
-    authorize! :read, @client
     render json: @client
   end
 
@@ -45,6 +44,7 @@ class ClientsController < ApplicationController
   end
 
   def set_client
+    authorize! :read, @client
     begin
       @client = User.find(params[:id])
     rescue
