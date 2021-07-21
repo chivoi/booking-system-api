@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       auth_token = Knock::AuthToken.new payload: {sub: @user.id}
-      render json: {username: @user.email, jwt: auth_token.token, first_name: @user.first_name, last_name: @user.last_name, phone_num: @user.phone_num}, status: 200
+      render json: {username: @user.email, jwt: auth_token.token, first_name: @user.first_name, last_name: @user.last_name, phone_num: @user.phone_num, is_admin: @user.is_admin}, status: 200
     else
       render json: {error: "Incorrect username or password"}, status: 404
     end
