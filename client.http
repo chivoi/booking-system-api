@@ -248,3 +248,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTgzO
   "date": "2022-08-02",
   "half_day": "2" 
 }
+
+### Get all available timeslots in the right order
+GET http://localhost:3000/api/timeslots
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTgzOTIsInN1YiI6NH0.dTqGRY7EYJyvRQolM0OblGY5kqOQGRIys7BZaCuf86o

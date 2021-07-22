@@ -2,6 +2,11 @@ class TimeslotsController < ApplicationController
   load_and_authorize_resource
   before_action :set_timeslot, only: [:update]
 
+  def index
+    @timeslots = Timeslot.where(is_blocked: false).and(Timeslot.where(date:Date.today..Float::INFINITY)).order(created_at: :asc)
+    render json: @timeslots
+  end
+
   def show
     render json: @timeslot
   end
