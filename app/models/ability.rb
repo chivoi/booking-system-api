@@ -7,6 +7,7 @@ class Ability
     user ||= User.new
     can :manage, User, user_id: user.id
     can :manage, Booking, user_id: user.id
+    can :manage, Timeslot
     can :manage, :all if user.is_admin
     cannot :destroy, :all if user.is_admin
   end

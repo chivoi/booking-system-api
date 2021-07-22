@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'clients/:id/bookings', to: 'clients#client_bookings'
 
     patch '/edit_availability', to: 'timeslots#update'
+    get '/timeslots/:id', to: 'timeslots#show'
+    post '/timeslots/get_by_params', to: 'timeslots#get_by_params'
 
     scope '/auth' do
       post '/sign_up', to: 'users#create'
