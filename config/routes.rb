@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'clients/:id/bookings', to: 'clients#client_bookings'
 
     get '/timeslots', to: 'timeslots#index'
+    get '/blocked_timeslots', to: 'timeslots#blocked_timeslots'
     patch '/edit_availability', to: 'timeslots#update'
     get '/timeslots/:id', to: 'timeslots#show'
     post '/timeslots/get_by_params', to: 'timeslots#get_by_params'

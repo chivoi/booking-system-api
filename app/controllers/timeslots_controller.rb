@@ -7,6 +7,11 @@ class TimeslotsController < ApplicationController
     render json: @timeslots
   end
 
+  def blocked_timeslots
+    @blocked_timeslots = Timeslot.where(is_blocked: true).order(created_at: :asc)
+    render json: @blocked_timeslots
+  end
+
   def show
     render json: @timeslot
   end
