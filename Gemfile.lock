@@ -81,8 +81,6 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faker (2.18.0)
-      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -199,7 +197,6 @@ DEPENDENCIES
   cancancan
   database_cleaner
   factory_bot_rails
-  faker
   knock
   listen (~> 3.3)
   pg (~> 1.1)
@@ -207,7 +204,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.4)
   responders
-  rspec-rails (~> 3.6)
+  rspec-rails
   spring
   tzinfo-data
 
