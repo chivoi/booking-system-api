@@ -1,5 +1,5 @@
 class BookingMailer < ApplicationMailer
-  default from: 'souhlasim@gmail.com'
+  default from: 'noreply@booking-system.com'
 
   def booking_email(booking:, user:)
     @booking = booking
