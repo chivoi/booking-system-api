@@ -49,7 +49,7 @@ class TimeslotsController < ApplicationController
     begin 
       @timeslot = Timeslot.find(params[:id])
     rescue
-      render json: {"error": "Timeslot not found"}, status: 404
+      render json: {error: "Timeslot not found"}, status: 404
     end
   end
 end
