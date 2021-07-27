@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Booking created!</h1>
+    <p>Congratulations, you have just created a booking. Here are the details: </p>
+    <p>On: <%= @booking.timeslot.date%> </p>
+    <p>Start: <%= @booking.start_time%> </p>
+    <p>Set Duration: <%= @booking.duration%> </p>
+    <p>Venue: <%= @booking.venue%> </p>
+    <p>Address: <%= @booking.address%> </p>
+    <p>PA provided: <%= @booking.pa_provided%> </p>
+    <p>Message: <%= @booking.message%> </p>
+
+    <p></b>The artist will be in touch soon!</b></p>
+
+    <p>Login to the app to view your bookings: <%=@url%></p>
+
+  </body>
+</html>

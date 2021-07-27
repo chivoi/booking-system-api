@@ -14,13 +14,15 @@ class BookingsController < ApplicationController
     render json: @all_bookings
   end
 
-  def create 
+  def create
     @booking = current_user.bookings.create(booking_params)
     if @booking.errors.any?
       render json: @booking.errors, status: :unprocessable_entity
     else
       @booking.timeslot.update(is_blocked: true)
       render json: @booking, status: 201
+      BookingMailer.with(booking: @booking, user: @booking.user).booking_email(booking: @booking, user: @booking.user).deliver_later
+      BookingMailer.with(booking: @booking, user: @booking.user).booking_email_user(booking: @booking, user: @booking.user).deliver_later
     end
   end
 
