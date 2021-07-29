@@ -228,3 +228,31 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3MDAxM
   "id": "500",
   "is_blocked": "false" 
 }
+
+### Get timeslot by date and half_day - admin
+POST http://localhost:3000/api/timeslots/get_id
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTUzOTUsInN1YiI6Mn0.6BFfpGRXpNTMHEhcS4zF7e_lnOlUaHEHd8wAStD7ijs
+
+{
+  "date": "2021-08-02",
+  "half_day": "one" 
+}
+
+### Get timeslot by date and half_day - regular user
+POST http://localhost:3000/api/timeslots/get_by_params
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTgzOTIsInN1YiI6NH0.dTqGRY7EYJyvRQolM0OblGY5kqOQGRIys7BZaCuf86o
+
+{
+  "date": "2022-08-02",
+  "half_day": "2" 
+}
+
+### Get all available timeslots in the right order
+GET http://localhost:3000/api/timeslots
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTgzOTIsInN1YiI6NH0.dTqGRY7EYJyvRQolM0OblGY5kqOQGRIys7BZaCuf86o
+
+### Get all blocked timeslots in the right order
+GET http://localhost:3000/api/blocked_timeslots
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTgzOTIsInN1YiI6NH0.dTqGRY7EYJyvRQolM0OblGY5kqOQGRIys7BZaCuf86o
